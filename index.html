@@ -1,0 +1,266 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tentang Riyo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  /* Tata letak: halaman manga. Panel berbingkai tinta tebal, bayangan keras tanpa blur, screentone titik, nomor bab, gelembung ucapan. */
+  :root {
+    color-scheme: light;
+    --paper: #f4f0ea;
+    --paper-2: #e9e3d9;
+    --ink: #17141c;
+    --ink-soft: #55505e;
+    --pink: #e8879f;
+    --pink-text: #b3446a;
+    --blue: #3b5b9c;
+    --tone: rgba(23, 20, 28, 0.2);
+    --shadow: #17141c;
+    --on-pink: #17141c;
+    --font-head: 'Shippori Mincho B1', 'Noto Serif', Georgia, serif;
+    --font-body: 'Zen Kaku Gothic New', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #15121a; --paper-2: #201b29; --ink: #f3eef0; --ink-soft: #b3abbd;
+      --pink: #ef9ab0; --pink-text: #f4a6b8; --blue: #93abe3; --tone: rgba(243, 238, 240, 0.16);
+      --shadow: #ef9ab0;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #15121a; --paper-2: #201b29; --ink: #f3eef0; --ink-soft: #b3abbd;
+    --pink: #ef9ab0; --pink-text: #f4a6b8; --blue: #93abe3; --tone: rgba(243, 238, 240, 0.16);
+    --shadow: #ef9ab0;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.8;
+    padding-block: 28px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  img, video { max-width: 100%; }
+
+  .wrap { max-width: 980px; margin: 0 auto; }
+
+  .panel { border: 2.5px solid var(--ink); background: var(--paper); box-shadow: 6px 6px 0 var(--shadow); }
+  .tone { background-image: radial-gradient(var(--tone) 1.2px, transparent 1.6px); background-size: 7px 7px; }
+
+  .top { display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 2.5px solid var(--ink); font-weight: 700; font-size: 14px; letter-spacing: .02em; }
+  .top span:last-child { color: var(--ink-soft); font-weight: 500; }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; align-items: center; padding: 56px 0 72px; }
+  h1 { margin: 0; font-family: var(--font-head); font-weight: 800; font-size: clamp(80px, 15vw, 148px); line-height: 1; letter-spacing: -.02em; }
+  h1 span { background: linear-gradient(transparent 64%, var(--pink) 64% 92%, transparent 92%); padding-inline: .04em; }
+  .lead { margin: 26px 0 0; max-width: 34em; font-size: 19px; text-wrap: pretty; }
+  .lead + .lead { margin-top: 12px; font-size: 17px; color: var(--ink-soft); }
+
+  .collage { position: relative; }
+  .vid { transform: rotate(-1.6deg); overflow: hidden; }
+  .vid video { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: -26px; padding-inline: 22px; position: relative; }
+  .pair img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .pair .panel:nth-child(1) { transform: rotate(2.2deg); }
+  .pair .panel:nth-child(2) { transform: rotate(-1.4deg) translateY(14px); }
+
+  /* Bab */
+  section { margin-top: 72px; }
+  .head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
+  .no { font-family: var(--font-head); font-weight: 800; font-size: 44px; line-height: 1; color: var(--pink-text); }
+  h2 { margin: 0; font-family: var(--font-head); font-weight: 800; font-size: clamp(26px, 4vw, 36px); line-height: 1.2; }
+
+  .list { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+  .list > div { padding: 14px 0; border-bottom: 1.5px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+  dt { font-weight: 700; font-size: 18px; }
+  dd { margin: 2px 0 0; color: var(--ink-soft); text-wrap: pretty; }
+
+  .stamps { display: flex; flex-wrap: wrap; gap: 12px 10px; margin: 0 0 22px; padding: 0; list-style: none; }
+  .stamps li { border: 2px solid var(--ink); background: var(--paper-2); padding: 3px 12px; font-weight: 700; font-size: 15px; transform: rotate(-1.2deg); transition: transform .15s; }
+  .stamps li:nth-child(3n+2) { transform: rotate(1deg); }
+  .stamps li:nth-child(3n) { transform: rotate(-.4deg); }
+  .stamps li:hover { transform: rotate(0) scale(1.05); background: var(--pink); color: var(--on-pink); }
+  .note { margin: 0; color: var(--ink-soft); max-width: 46em; }
+
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 0; padding: 0; list-style: none; }
+  .projects li { position: relative; padding: 22px 24px 26px; transition: transform .12s, box-shadow .12s; overflow: hidden; }
+  .projects li:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--shadow); }
+  .projects li:first-child { grid-column: 1 / -1; padding-right: 36%; background: var(--paper-2); }
+  .projects li:first-child::after { content: ""; position: absolute; inset: 0 0 0 auto; width: 30%; background-image: radial-gradient(var(--tone) 1.4px, transparent 1.8px); background-size: 8px 8px; -webkit-mask-image: linear-gradient(90deg, transparent, #000); mask-image: linear-gradient(90deg, transparent, #000); pointer-events: none; }
+  .kind { display: block; font-size: 13px; font-weight: 700; color: var(--pink-text); letter-spacing: .04em; text-transform: uppercase; }
+  h3 { margin: 2px 0 6px; font-family: var(--font-head); font-weight: 800; font-size: 28px; line-height: 1.25; }
+  .projects p { margin: 0; color: var(--ink-soft); text-wrap: pretty; }
+  .projects li:first-child p { color: var(--ink); }
+
+  .bubble { position: relative; max-width: 40em; padding: 26px 30px; border: 2.5px solid var(--ink); border-radius: 30px; background: var(--paper); margin-bottom: 26px; }
+  .bubble::after { content: ""; position: absolute; left: 56px; bottom: -14px; width: 24px; height: 24px; background: var(--paper); border-right: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: rotate(45deg); }
+  .bubble p { margin: 0; text-wrap: pretty; }
+  .bubble p + p { margin-top: 12px; }
+
+  .duo { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 40px; align-items: center; }
+  .duo.flip { grid-template-columns: 210px minmax(0, 1fr); }
+  .duo p { margin: 0; max-width: 34em; text-wrap: pretty; }
+  .duo p + p { margin-top: 12px; }
+  .duo img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .duo .panel { transform: rotate(2.5deg); transition: transform .2s; }
+  .duo.flip .panel { transform: rotate(-2.5deg); }
+  .duo .panel:hover { transform: rotate(0); }
+
+  .links { display: flex; flex-wrap: wrap; gap: 22px; margin: 0; padding: 0; list-style: none; }
+  .links a { display: block; min-width: 220px; padding: 12px 20px; text-decoration: none; transition: transform .12s, box-shadow .12s, background .12s; }
+  .links a:hover { background: var(--pink); color: var(--on-pink); transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--shadow); }
+  .links small { display: block; font-size: 13px; font-weight: 500; opacity: .75; line-height: 1.4; }
+  .links b { font-weight: 700; overflow-wrap: anywhere; }
+
+  footer { margin-top: 80px; padding-top: 12px; border-top: 2.5px solid var(--ink); display: flex; flex-wrap: wrap; gap: 4px 24px; justify-content: space-between; font-size: 14px; }
+  footer strong { font-family: var(--font-head); font-weight: 800; font-size: 16px; }
+  footer span { color: var(--ink-soft); }
+
+  @media (max-width: 800px) {
+    body { font-size: 16px; }
+    .hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding: 36px 0 48px; }
+    .lead { font-size: 18px; }
+    section { margin-top: 56px; }
+    .no { font-size: 36px; }
+    .list { grid-template-columns: 1fr; }
+    .projects { grid-template-columns: 1fr; gap: 22px; }
+    .projects li:first-child { padding-right: 24px; }
+    .projects li:first-child::after { display: none; }
+    .duo, .duo.flip { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .duo .panel { width: 180px; margin-inline: 8px; }
+    .duo.flip .panel { order: 2; }
+    .bubble { padding: 22px 22px; border-radius: 24px; }
+    .links a { min-width: 0; width: 100%; }
+    .links li { flex: 1 1 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+
+<div class="wrap">
+  <div class="top"><span>Riyo</span><span>Tentang saya</span></div>
+
+  <header class="hero">
+    <div>
+      <h1><span>Riyo</span></h1>
+      <p class="lead">Saya Riyo, developer dari Indonesia. Hampir semua yang saya buat berupa website: tampilannya, server di belakangnya, sambungan ke API, database, sampai sistem login.</p>
+      <p class="lead">Selain itu saya suka membuat chatbot AI dan bot WhatsApp, dan hampir selalu ada satu proyek yang sedang saya kerjakan.</p>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <div class="panel vid"><video id="loop" autoplay muted loop playsinline preload="auto" poster="media/poster.jpg"><source src="media/showcase.mp4" type="video/mp4"></video></div>
+      <div class="pair">
+        <div class="panel"><img src="media/gallery-1.jpg" alt=""></div>
+        <div class="panel"><img src="media/gallery-2.jpg" alt=""></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="bidang">
+    <div class="head"><span class="no">01</span><h2>Yang saya kerjakan</h2></div>
+    <dl class="list">
+      <div><dt>Website</dt><dd>Ditulis dengan HTML, CSS, dan JavaScript. Dari halaman biasa sampai aplikasi yang punya akun pengguna.</dd></div>
+      <div><dt>Tampilan (frontend)</dt><dd>Halaman yang enak dibuka di HP maupun laptop, dan mudah dipahami orang yang baru pertama kali masuk.</dd></div>
+      <div><dt>Server (backend)</dt><dd>Mengolah data, membuat endpoint API, mengurus login, dan menjalankan logika di sisi server.</dd></div>
+      <div><dt>Sambungan API</dt><dd>Menghubungkan website ke layanan lain, misalnya API anime dan API AI.</dd></div>
+      <div><dt>Database</dt><dd>Firebase dan Firestore untuk menyimpan data aplikasi dan pengguna.</dd></div>
+      <div><dt>AI</dt><dd>Memasang AI ke dalam chatbot dan aplikasi.</dd></div>
+      <div><dt>Bot WhatsApp</dt><dd>Bot yang bisa menjawab lewat AI, punya fitur moderasi, dan ada permainan di dalamnya.</dd></div>
+    </dl>
+  </section>
+
+  <section id="teknologi">
+    <div class="head"><span class="no">02</span><h2>Alat yang saya pakai</h2></div>
+    <ul class="stamps">
+      <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Node.js</li><li>PHP</li><li>Firebase</li>
+      <li>Cloud Firestore</li><li>REST API</li><li>Git dan GitHub</li><li>Vercel</li><li>Acode</li><li>Termux</li>
+    </ul>
+    <p class="note">Tidak semuanya saya kuasai sama dalam. Ada yang saya pakai setiap hari, ada yang baru sebatas saya coba.</p>
+  </section>
+
+  <section id="proyek">
+    <div class="head"><span class="no">03</span><h2>Proyek</h2></div>
+    <ul class="projects">
+      <li class="panel">
+        <span class="kind">Website</span>
+        <h3>Kananime</h3>
+        <p>Website untuk nonton anime. Isinya katalog anime, halaman detail dan daftar episode, login, leaderboard, dan pengaturan akun. Datanya saya ambil dari API.</p>
+      </li>
+      <li class="panel">
+        <span class="kind">Bot WhatsApp</span>
+        <h3>Arima Kana</h3>
+        <p>Asisten AI yang berjalan di WhatsApp. Punya fitur moderasi dan game RPG.</p>
+      </li>
+      <li class="panel">
+        <span class="kind">Chatbot</span>
+        <h3>AI Chatbot</h3>
+        <p>Chatbot yang memakai API AI. Ditulis dengan JavaScript, tampilannya HTML, dan jawabannya muncul sedikit demi sedikit saat ditulis (streaming).</p>
+      </li>
+      <li class="panel">
+        <span class="kind">Portofolio</span>
+        <h3>Riyo Portfolio</h3>
+        <p>Situs profil saya sendiri. Tampilannya sederhana, ada beberapa bagian yang bisa digerakkan, dan berisi tautan ke media sosial saya.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="berkembang">
+    <div class="head"><span class="no">04</span><h2>Cara saya belajar</h2></div>
+    <div class="bubble">
+      <p>Menjadi developer itu tidak berhenti di menulis kode. Waktunya banyak habis untuk memahami cara kerja sebuah sistem, membaca dokumentasi, dan mencari tahu kenapa sebuah error muncul.</p>
+      <p>Cara belajar saya: membuat proyek yang sungguhan, lalu mencari tahu bagian yang belum paham saat tersangkut di tengah jalan.</p>
+    </div>
+  </section>
+
+  <section id="minat">
+    <div class="head"><span class="no">05</span><h2>Di luar kode</h2></div>
+    <div class="duo">
+      <p>Saya suka anime dan video editing, dan senang mencoba teknologi baru. Ketiganya sering jadi bahan untuk proyek berikutnya, jadi tidak terpisah dari kerjaan saya.</p>
+      <div class="panel"><img src="media/gallery-3.jpg" alt="" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section id="tujuan">
+    <div class="head"><span class="no">06</span><h2>Yang ingin saya capai</h2></div>
+    <div class="duo flip">
+      <div class="panel"><img src="media/gallery-2.jpg" alt="" loading="lazy"></div>
+      <div>
+        <p>Saya ingin makin kuat di full-stack: membuat proyek yang lebih rapi, berjalan dengan benar, dan aman dipakai orang lain.</p>
+        <p>Setiap proyek saya anggap latihan untuk proyek berikutnya.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tautan">
+    <div class="head"><span class="no">07</span><h2>Temukan saya</h2></div>
+    <ul class="links">
+      <li><a class="panel" href="https://github.com/riyoajah" target="_blank" rel="noopener noreferrer"><small>GitHub</small><b>github.com/riyoajah</b></a></li>
+      <li><a class="panel" href="https://youtube.com/@riyoo_xd1" target="_blank" rel="noopener noreferrer"><small>YouTube</small><b>@riyoo_xd1</b></a></li>
+      <li><a class="panel" href="https://tiktok.com/@riyo_xd" target="_blank" rel="noopener noreferrer"><small>TikTok</small><b>@riyo_xd</b></a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <strong>Riyo</strong>
+    <span>Web Development &bull; API Integration &bull; AI Exploration</span>
+  </footer>
+</div>
+<script>
+  (function () {
+    var v = document.getElementById('loop');
+    if (v && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay'); v.pause();
+    }
+  })();
+</script>
+
+</body></html>
