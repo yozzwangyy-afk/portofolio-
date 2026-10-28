@@ -49,6 +49,13 @@
   a { color: inherit; }
   :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
   img, video { max-width: 100%; }
+  /* Perlindungan media: nonaktifkan interaksi langsung dan pemilihan/drag. */
+  img, video {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+  }
 
   .wrap { max-width: 980px; margin: 0 auto; }
 
@@ -157,7 +164,7 @@
       <p class="lead">Selain itu saya suka membuat chatbot AI dan bot WhatsApp, dan hampir selalu ada satu proyek yang sedang saya kerjakan.</p>
     </div>
     <div class="collage" aria-hidden="true">
-      <div class="panel vid"><video id="loop" autoplay muted loop playsinline preload="auto" poster="media/poster.jpg"><source src="media/showcase.mp4" type="video/mp4"></video></div>
+      <div class="panel vid"><video id="loop" autoplay muted loop playsinline preload="auto" controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback draggable="false" poster="media/poster.jpg"><source src="media/showcase.mp4" type="video/mp4"></video></div>
       <div class="pair">
         <div class="panel"><img src="media/gallery-1.jpg" alt=""></div>
         <div class="panel"><img src="media/gallery-2.jpg" alt=""></div>
@@ -256,6 +263,16 @@
 </div>
 <script>
   (function () {
+    // Mencegah menu klik-kanan, drag, dan klik langsung pada foto/video.
+    document.querySelectorAll('img, video').forEach(function (media) {
+      media.setAttribute('draggable', 'false');
+      media.addEventListener('contextmenu', function (event) { event.preventDefault(); });
+      media.addEventListener('dragstart', function (event) { event.preventDefault(); });
+      media.addEventListener('click', function (event) { event.preventDefault(); event.stopPropagation(); });
+    });
+    document.addEventListener('contextmenu', function (event) {
+      if (event.target && event.target.closest && event.target.closest('img, video')) event.preventDefault();
+    });
     var v = document.getElementById('loop');
     if (v && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       v.removeAttribute('autoplay'); v.pause();
