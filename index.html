@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Tentang Riyo</title>
+<title>Riyo — Creative Developer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <style>
@@ -154,14 +154,93 @@
   }
 </style>
 
+<style>
+  :root {
+    color-scheme: dark;
+    --paper: #090b12; --paper-2: #111522; --ink: #f3f5fb; --ink-soft: #a3abc0;
+    --pink: #8b7cff; --pink-text: #a99cff; --blue: #74b8ff; --tone: rgba(255,255,255,.07);
+    --shadow: rgba(0,0,0,.28); --on-pink: #fff;
+    --font-head: 'Zen Kaku Gothic New', system-ui, sans-serif;
+    --font-body: 'Zen Kaku Gothic New', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { color-scheme: dark; } }
+  body { background: radial-gradient(ellipse at 12% 8%, rgba(88,76,190,.18), transparent 32rem), radial-gradient(ellipse at 90% 35%, rgba(40,120,190,.12), transparent 28rem), var(--paper); color:var(--ink); font-size:16px; line-height:1.8; }
+  .wrap { max-width:1060px; }
+  .top { border-bottom:1px solid rgba(255,255,255,.12); padding:0 0 16px; letter-spacing:.12em; font-size:12px; color:#dfe3f1; }
+  .top span:last-child { color:var(--ink-soft); letter-spacing:.04em; }
+  .top-mark { color:var(--pink-text); margin-left:3px; }
+  .hero { padding:76px 0 60px; gap:52px; }
+  h1 { font-size:clamp(82px,14vw,150px); letter-spacing:-.075em; }
+  h1 span { background:linear-gradient(transparent 70%,rgba(139,124,255,.8) 70% 91%,transparent 91%); }
+  .eyebrow { margin:0 0 14px; color:var(--pink-text); font-size:12px; font-weight:700; letter-spacing:.18em; }
+  .lead { font-size:19px; line-height:1.8; margin-top:18px; }
+  .lead + .lead { font-size:16px; color:var(--ink-soft); }
+  .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+  .action { display:inline-flex; align-items:center; gap:18px; padding:11px 17px; border:1px solid rgba(255,255,255,.16); border-radius:999px; text-decoration:none; font-size:14px; font-weight:700; transition:transform .18s,border-color .18s,background .18s; }
+  .action:hover { transform:translateY(-2px); border-color:rgba(169,156,255,.8); }
+  .action.primary { background:linear-gradient(120deg,#7867ef,#557ce7); color:#fff; border-color:transparent; }
+  .action.secondary { background:rgba(255,255,255,.035); }
+  .panel { border:1px solid rgba(255,255,255,.13); background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025)); box-shadow:0 18px 44px rgba(0,0,0,.22); border-radius:20px; }
+  .tone { background-image:none; }
+  .vid { transform:rotate(-1deg); border-radius:24px; }
+  .vid video { aspect-ratio:4/3; }
+  .pair { gap:14px; margin-top:-22px; }
+  .pair .panel:nth-child(1),.pair .panel:nth-child(2) { border-radius:16px; overflow:hidden; }
+  section { margin-top:76px; }
+  .head { align-items:center; gap:15px; margin-bottom:25px; }
+  .no { font-family:var(--font-body); font-size:12px; letter-spacing:.1em; color:var(--pink-text); border:1px solid rgba(169,156,255,.35); background:rgba(139,124,255,.09); border-radius:9px; padding:4px 8px; }
+  h2 { font-size:clamp(25px,4vw,34px); letter-spacing:-.045em; }
+  .list { gap:0 36px; }
+  .list>div { padding:17px 0; border-bottom:1px solid rgba(255,255,255,.1); }
+  dt { font-size:16px; }
+  dd { font-size:14px; line-height:1.75; }
+  .stamps { gap:9px; }
+  .stamps li,.stamps li:nth-child(3n+2),.stamps li:nth-child(3n) { border:1px solid rgba(255,255,255,.13); border-radius:999px; background:rgba(255,255,255,.045); color:var(--ink); padding:5px 13px; font-size:13px; transform:none; }
+  .stamps li:hover { background:rgba(139,124,255,.16); color:#fff; transform:translateY(-2px); }
+  .note { font-size:14px; }
+  .projects { gap:16px; }
+  .projects li,.projects li:first-child { grid-column:auto; padding:23px; background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.02)); }
+  .projects li:first-child::after { display:none; }
+  .projects li:hover { transform:translateY(-3px); box-shadow:0 22px 45px rgba(0,0,0,.25); }
+  .kind { font-size:11px; letter-spacing:.14em; }
+  h3 { font-family:var(--font-body); font-size:22px; letter-spacing:-.035em; margin:7px 0; }
+  .projects p,.projects li:first-child p { color:var(--ink-soft); font-size:14px; line-height:1.8; }
+  .bubble { max-width:none; border:1px solid rgba(255,255,255,.14); border-radius:20px; background:rgba(255,255,255,.035); padding:26px; margin-bottom:20px; }
+  .bubble::after { display:none; }
+  .bubble p { font-size:15px; }
+  .duo { gap:34px; }
+  .duo .panel { border-radius:18px; overflow:hidden; }
+  .duo .panel,.duo.flip .panel { transform:none; }
+  .duo p { font-size:15px; }
+  .links { gap:12px; }
+  .links li { flex:1 1 230px; }
+  .links a { min-width:0; height:100%; border-radius:15px; padding:15px 18px; }
+  .links a:hover { background:rgba(139,124,255,.12); color:var(--ink); transform:translateY(-2px); box-shadow:none; border-color:rgba(169,156,255,.5); }
+  footer { border-top:1px solid rgba(255,255,255,.13); margin-top:76px; padding-top:18px; }
+  footer strong { font-family:var(--font-body); letter-spacing:.08em; }
+  @media(max-width:800px) {
+    body { font-size:15px; padding-top:20px; }
+    .hero { gap:32px; padding:48px 0 36px; }
+    .lead { font-size:18px; }
+    section { margin-top:56px; }
+    .projects { grid-template-columns:1fr; }
+    .projects li:first-child { grid-column:auto; }
+    .duo,.duo.flip { gap:20px; }
+    .duo .panel { width:min(220px,70%); }
+    .links li { flex-basis:100%; }
+  }
+</style>
+
 <div class="wrap">
-  <div class="top"><span>Riyo</span><span>Tentang saya</span></div>
+  <div class="top"><span>RIYO<span class="top-mark">.DEV</span></span><span>digital playground · 2026</span></div>
 
   <header class="hero">
     <div>
       <h1><span>Riyo</span></h1>
-      <p class="lead">Saya Riyo, developer dari Indonesia. Hampir semua yang saya buat berupa website: tampilannya, server di belakangnya, sambungan ke API, database, sampai sistem login.</p>
-      <p class="lead">Selain itu saya suka membuat chatbot AI dan bot WhatsApp, dan hampir selalu ada satu proyek yang sedang saya kerjakan.</p>
+      <p class="eyebrow">DEVELOPER · CREATOR · ALWAYS EXPLORING</p>
+      <p class="lead">Gw Riyo. Suka bikin website, utak-atik tampilan, dan ngubah ide yang awalnya cuma kepikiran jadi project nyata.</p>
+      <p class="lead">Ini tempat buat ngelihat apa yang lagi gw kerjain, apa yang gw suka, dan hal-hal yang pengin gw coba berikutnya. Pelan-pelan, satu project dalam satu waktu.</p>
+      <div class="hero-actions"><a class="action primary" href="#proyek">Jelajahi project <span aria-hidden="true">↘</span></a><a class="action secondary" href="#tautan">Sosial media</a></div>
     </div>
     <div class="collage" aria-hidden="true">
       <div class="panel vid"><video id="loop" autoplay muted loop playsinline preload="auto" controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback draggable="false" poster="media/poster.jpg"><source src="media/showcase.mp4" type="video/mp4"></video></div>
@@ -173,82 +252,76 @@
   </header>
 
   <section id="bidang">
-    <div class="head"><span class="no">01</span><h2>Yang saya kerjakan</h2></div>
+    <div class="head"><span class="no">01</span><h2>Yang sering gw utak-atik</h2></div>
     <dl class="list">
-      <div><dt>Website</dt><dd>Ditulis dengan HTML, CSS, dan JavaScript. Dari halaman biasa sampai aplikasi yang punya akun pengguna.</dd></div>
-      <div><dt>Tampilan (frontend)</dt><dd>Halaman yang enak dibuka di HP maupun laptop, dan mudah dipahami orang yang baru pertama kali masuk.</dd></div>
-      <div><dt>Server (backend)</dt><dd>Mengolah data, membuat endpoint API, mengurus login, dan menjalankan logika di sisi server.</dd></div>
-      <div><dt>Sambungan API</dt><dd>Menghubungkan website ke layanan lain, misalnya API anime dan API AI.</dd></div>
-      <div><dt>Database</dt><dd>Firebase dan Firestore untuk menyimpan data aplikasi dan pengguna.</dd></div>
-      <div><dt>AI</dt><dd>Memasang AI ke dalam chatbot dan aplikasi.</dd></div>
-      <div><dt>Bot WhatsApp</dt><dd>Bot yang bisa menjawab lewat AI, punya fitur moderasi, dan ada permainan di dalamnya.</dd></div>
+      <div><dt>Web development</dt><dd>Ngerangkai ide jadi website yang bukan cuma enak dilihat, tapi juga berguna.</dd></div>
+      <div><dt>Frontend</dt><dd>Ngulik layout, warna, dan detail kecil biar pengalaman pakainya terasa pas, termasuk di HP.</dd></div>
+      <div><dt>Backend</dt><dd>Belajar ngerjain proses di balik layar, mulai dari autentikasi sampai pengelolaan data.</dd></div>
+      <div><dt>API</dt><dd>Menghubungkan aplikasi dengan layanan lain supaya fitur yang dibuat bisa bekerja bareng.</dd></div>
+      <div><dt>Database</dt><dd>Nyusun data supaya bisa disimpan, dicari, dan dipakai dengan benar.</dd></div>
+      <div><dt>Eksperimen AI</dt><dd>Nyoba cara baru memanfaatkan AI untuk fitur yang terasa praktis dan masuk akal.</dd></div>
     </dl>
   </section>
 
   <section id="teknologi">
-    <div class="head"><span class="no">02</span><h2>Alat yang saya pakai</h2></div>
+    <div class="head"><span class="no">02</span><h2>Tools yang gw pelajari</h2></div>
     <ul class="stamps">
       <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Node.js</li><li>PHP</li><li>Firebase</li>
       <li>Cloud Firestore</li><li>REST API</li><li>Git dan GitHub</li><li>Vercel</li><li>Acode</li><li>Termux</li>
     </ul>
-    <p class="note">Tidak semuanya saya kuasai sama dalam. Ada yang saya pakai setiap hari, ada yang baru sebatas saya coba.</p>
+    <p class="note">Daftar ini bukan berarti udah jago semuanya. Sebagian sering dipakai, sebagian lain masih terus gw pelajari sambil bikin project.</p>
   </section>
 
   <section id="proyek">
-    <div class="head"><span class="no">03</span><h2>Proyek</h2></div>
+    <div class="head"><span class="no">03</span><h2>Project pilihan</h2></div>
     <ul class="projects">
       <li class="panel">
         <span class="kind">Website</span>
         <h3>Kananime</h3>
-        <p>Website untuk nonton anime. Isinya katalog anime, halaman detail dan daftar episode, login, leaderboard, dan pengaturan akun. Datanya saya ambil dari API.</p>
+        <p>Project website anime yang gw kembangin dengan fokus ke tampilan yang nyaman, navigasi yang jelas, dan fitur yang terus dibenahi.</p>
       </li>
       <li class="panel">
-        <span class="kind">Bot WhatsApp</span>
-        <h3>Arima Kana</h3>
-        <p>Asisten AI yang berjalan di WhatsApp. Punya fitur moderasi dan game RPG.</p>
+        <span class="kind">Eksperimen</span>
+        <h3>Automasi & tools</h3>
+        <p>Berbagai percobaan kecil buat memahami alur kerja aplikasi, menyederhanakan proses, dan belajar dari implementasi langsung.</p>
       </li>
       <li class="panel">
         <span class="kind">Chatbot</span>
-        <h3>AI Chatbot</h3>
-        <p>Chatbot yang memakai API AI. Ditulis dengan JavaScript, tampilannya HTML, dan jawabannya muncul sedikit demi sedikit saat ditulis (streaming).</p>
-      </li>
-      <li class="panel">
-        <span class="kind">Portofolio</span>
-        <h3>Riyo Portfolio</h3>
-        <p>Situs profil saya sendiri. Tampilannya sederhana, ada beberapa bagian yang bisa digerakkan, dan berisi tautan ke media sosial saya.</p>
+        <h3>AI Playground</h3>
+        <p>Eksperimen antarmuka dan integrasi API untuk melihat gimana fitur berbasis AI bisa terasa simpel saat dipakai.</p>
       </li>
     </ul>
   </section>
 
   <section id="berkembang">
-    <div class="head"><span class="no">04</span><h2>Cara saya belajar</h2></div>
+    <div class="head"><span class="no">04</span><h2>Prosesnya nggak selalu mulus</h2></div>
     <div class="bubble">
-      <p>Menjadi developer itu tidak berhenti di menulis kode. Waktunya banyak habis untuk memahami cara kerja sebuah sistem, membaca dokumentasi, dan mencari tahu kenapa sebuah error muncul.</p>
-      <p>Cara belajar saya: membuat proyek yang sungguhan, lalu mencari tahu bagian yang belum paham saat tersangkut di tengah jalan.</p>
+      <p>Nggak semua hal langsung berhasil. Ada waktunya baca dokumentasi, nyari sumber error, terus nyoba lagi sampai ketemu cara yang lebih tepat.</p>
+      <p>Gw paling gampang belajar waktu langsung bikin sesuatu. Hasilnya boleh belum sempurna, asal tiap proses bikin gw lebih paham dari sebelumnya.</p>
     </div>
   </section>
 
   <section id="minat">
-    <div class="head"><span class="no">05</span><h2>Di luar kode</h2></div>
+    <div class="head"><span class="no">05</span><h2>Hal lain yang gw suka</h2></div>
     <div class="duo">
-      <p>Saya suka anime dan video editing, dan senang mencoba teknologi baru. Ketiganya sering jadi bahan untuk proyek berikutnya, jadi tidak terpisah dari kerjaan saya.</p>
+      <p>Kalau lagi nggak ngoding, biasanya gw nonton anime, ngedit video, atau nyoba hal baru. Kadang ide project malah muncul dari kegiatan yang kelihatannya nggak ada hubungannya.</p>
       <div class="panel"><img src="media/gallery-3.jpg" alt="" loading="lazy"></div>
     </div>
   </section>
 
   <section id="tujuan">
-    <div class="head"><span class="no">06</span><h2>Yang ingin saya capai</h2></div>
+    <div class="head"><span class="no">06</span><h2>Next: bikin yang lebih baik</h2></div>
     <div class="duo flip">
       <div class="panel"><img src="media/gallery-2.jpg" alt="" loading="lazy"></div>
       <div>
-        <p>Saya ingin makin kuat di full-stack: membuat proyek yang lebih rapi, berjalan dengan benar, dan aman dipakai orang lain.</p>
-        <p>Setiap proyek saya anggap latihan untuk proyek berikutnya.</p>
+        <p>Target gw sederhana: makin ngerti proses bikin web dari awal sampai akhir, dan bisa ngerilis project yang lebih matang, aman, serta nyaman dipakai.</p>
+        <p>Nggak harus buru-buru terlihat hebat. Yang penting terus belajar, berani nyoba, dan bikin versi berikutnya lebih bagus.</p>
       </div>
     </div>
   </section>
 
   <section id="tautan">
-    <div class="head"><span class="no">07</span><h2>Temukan saya</h2></div>
+    <div class="head"><span class="no">07</span><h2>Find me online</h2></div>
     <ul class="links">
       <li><a class="panel" href="https://github.com/riyoajah" target="_blank" rel="noopener noreferrer"><small>GitHub</small><b>github.com/riyoajah</b></a></li>
       <li><a class="panel" href="https://youtube.com/@riyoo_xd1" target="_blank" rel="noopener noreferrer"><small>YouTube</small><b>@riyoo_xd1</b></a></li>
@@ -258,7 +331,7 @@
 
   <footer>
     <strong>Riyo</strong>
-    <span>Web Development &bull; API Integration &bull; AI Exploration</span>
+    <span>web development · anime · editing</span>
   </footer>
 </div>
 <script>
